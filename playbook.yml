@@ -8,7 +8,7 @@
   tasks:
   - name: Echo message
     ansible.builtin.shell: hostname
-      var: host_name
+    register: host_name
 
   - name: Debug message
     ansible.builtin.debug:
