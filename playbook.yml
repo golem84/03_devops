@@ -12,5 +12,5 @@
 
   - name: Debug message
     ansible.builtin.debug:
-      debug: {{ host_name.stdout }}
+      msg: {{ host_name.stdout }}
       
