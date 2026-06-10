@@ -11,28 +11,8 @@
       name: nmap
       state: present
 
-  - name: Check nmap installed
-    ansible.builtin.shell: nmap -v | jq -Rs 'split(" ")' | jq -r .[2]
-    register: nmapversion
-
-  - name: Debug message
-    ansible.builtin.debug:
-      msg: "nmap version: {{ nmapversion.stdout }}"
-      
   - name: Copy targets
     ansible.builtin.copy:
       src: ./targets.txt
       dest: ~/targets.txt
-
-  - name: Ensure targets exists
-    ansible.builtin.file:
-      path: .
-      patterns: 'target.txt'
-    register: target-name
-
-  - name: Debug file exists
-    ansible.builtin.debug:
-      msg: "file not found..."
-    when: target-name.stdout==""
-
-  
+      force: yes
