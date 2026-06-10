@@ -12,7 +12,7 @@
       state: present
 
   - name: Check nmap installed
-    ansible.builtin.shell: nmap -v
+    ansible.builtin.shell: nmap -v | jq -Rs 'split(" ")' | jq -r .[2]
     register: nmapversion
 
   - name: Debug message
