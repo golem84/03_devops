@@ -17,5 +17,5 @@
 
   - name: Debug message
     ansible.builtin.debug:
-    msg: "nmap version: {{ nmapversion.stdout }}"
+      msg: "nmap version: {{ nmapversion.stdout }}"
       
