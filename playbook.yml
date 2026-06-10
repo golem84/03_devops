@@ -13,9 +13,9 @@
 
   - name: Check nmap installed
     ansible.builtin.shell: nmap -V
-    register: nmap_version
+    register: nmapversion
 
   - name: Debug message
     ansible.builtin.debug:
-    msg: "nmap version: {{ nmap_version.stdout }}"
+    msg: "nmap version: {{ nmapversion.stdout }}"
       
