@@ -23,4 +23,7 @@
 Запускаем playbook из текущей директории:  
 `ansible-playbook playbook.yml -i inventory.ini`
 
+Результат выполнения сценария:  
+<img width="841" height="383" alt="image" src="https://github.com/user-attachments/assets/c78fca1e-ae8f-4846-a7b7-de1b269dbfa6" />
+
 
