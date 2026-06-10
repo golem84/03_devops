@@ -1,0 +1,11 @@
+---
+- name: try-debug
+  hosts: webservers
+  remote_user: runner
+  become: yes
+  become_method: sudo
+
+  tasks:
+  - name: Echo message
+    ansible.builtin.debug:
+      msg: Hello!
