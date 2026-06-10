@@ -6,11 +6,15 @@
   become_method: sudo
 
   tasks:
-  - name: Echo message
-    ansible.builtin.shell: hostname
-    register: host_name
+  - name: Ensure nmap installed
+    ansible.builtin.apt: nmap
+    state: present
+
+  - name: Check nmap installed
+    ansible.builtin.command: nmap -V
+    register: nmap_version
 
   - name: Debug message
     ansible.builtin.debug:
-      msg: "hostname: {{ host_name.stdout }}"
+      msg: "nmap version: {{ nmap_version.stdout }}"
       
