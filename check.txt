@@ -1,0 +1,4 @@
+github.com
+golemlab.ru
+www.psu.ru
+moodle-epos.permkrai.ru

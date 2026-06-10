@@ -19,3 +19,20 @@
     ansible.builtin.debug:
       msg: "nmap version: {{ nmapversion.stdout }}"
       
+  - name: Copy targets
+    ansible.builtin.copy:
+      src: ./targets.txt
+      dest: ~/targets.txt
+
+  - name: Ensure targets exists
+    ansible.builtin.file:
+      path: .
+      patterns: 'target.txt'
+    register: file-name
+
+  - name: Debug file exists
+    ansible.builtin.debug:
+      msg: "file not found..."
+    when: file-name.stdout==""
+
+  
