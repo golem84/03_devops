@@ -1,4 +1,4 @@
-github.com
-golemlab.ru
-www.psu.ru
-moodle-epos.permkrai.ru
+ticket.rzd.ru
+sberbank.ru
+google.com
+
