@@ -7,8 +7,9 @@
 
   tasks:
   - name: Ensure nmap installed
-    ansible.builtin.apt: nmap
-    state: present
+    ansible.builtin.apt:
+      name: nmap
+      state: present
 
   - name: Check nmap installed
     ansible.builtin.command: nmap -V
@@ -16,5 +17,5 @@
 
   - name: Debug message
     ansible.builtin.debug:
-      msg: "nmap version: {{ nmap_version.stdout }}"
+    msg: "nmap version: {{ nmap_version.stdout }}"
       
