@@ -16,3 +16,11 @@
       src: ./targets.txt
       dest: ~/targets.txt
       force: yes
+
+  - name: Run nmap
+    ansible.builtin.command: nmap -iL ~/targets.txt -oX
+    register: nmap_results
+
+  - name: Print nmap results
+    ansible.builtin.debug:
+      msg: "{{ nmap_results.stdout }}"
