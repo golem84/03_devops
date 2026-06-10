@@ -12,6 +12,6 @@
 
   - name: Debug message
     ansible.builtin.debug:
-      msg: " {{ host_name.stdout }} "
+      msg: " {{ host_name.stdout_lines }} "
       var: host_name
       
