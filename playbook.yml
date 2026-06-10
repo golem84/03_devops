@@ -28,11 +28,11 @@
     ansible.builtin.file:
       path: .
       patterns: 'target.txt'
-    register: file-name
+    register: target-name
 
   - name: Debug file exists
     ansible.builtin.debug:
       msg: "file not found..."
-    when: file-name.stdout==""
+    when: target-name.stdout==""
 
   
