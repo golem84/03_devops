@@ -18,7 +18,7 @@
       force: yes
 
   - name: Run nmap
-    ansible.builtin.command: nmap -iL ~/targets.txt -oX
+    ansible.builtin.command: nmap -iL ~/targets.txt -oG -
     register: nmap_results
 
   - name: Print nmap results
